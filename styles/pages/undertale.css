@@ -1,0 +1,544 @@
+.undertale-page {
+  --game-accent: #55b8ff;
+  --game-accent-soft: rgba(85, 184, 255, 0.12);
+
+  background: var(--bg-color);
+}
+
+.undertale-page main {
+  width: 100%;
+}
+
+.game-container {
+  width: min(1150px, 90%);
+  margin: 0 auto;
+}
+
+.game-hero {
+  width: min(1250px, 92%);
+  min-height: 520px;
+  margin: 35px auto 65px;
+
+  padding: 75px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    linear-gradient(90deg, rgba(8, 15, 28, 0.97), rgba(8, 15, 28, 0.55)),
+    url("../../images/undertale/cover/undertale-background1.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.game-hero-content {
+  max-width: 650px;
+}
+
+.game-hero h1 {
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  color: var(--game-accent);
+  margin: 15px 0 20px;
+  letter-spacing: 3px;
+}
+
+.game-hero p {
+  color: #e0e7f0;
+  line-height: 1.9;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+}
+
+.section-label {
+  color: var(--game-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.game-section h2,
+.game-overview h2 {
+  color: var(--text-color);
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 30px;
+}
+
+.game-section {
+  width: min(1150px, 90%);
+  margin: 0 auto;
+  padding: 55px 0;
+}
+
+.game-overview {
+  width: min(1150px, 90%);
+  margin: 0 auto 45px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.overview-image {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+}
+
+.overview-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overview-content p:not(.section-label) {
+  color: var(--muted-color);
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.game-details {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.game-details > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  padding: 17px;
+  background: var(--card-color);
+
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+
+  transition: 0.25s;
+}
+
+.game-details > div:hover {
+  border-color: var(--game-accent);
+  background: var(--game-accent-soft);
+}
+
+.game-details span {
+  color: var(--muted-color);
+  font-size: 0.85rem;
+}
+
+.game-details strong {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.story-section {
+  width: min(1150px, 90%);
+  margin: 40px auto;
+  padding: 40px;
+
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+}
+
+.story-section h2 {
+  color: var(--game-accent);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.story-section p:last-child {
+  color: var(--muted-color);
+  line-height: 1.9;
+  max-width: 900px;
+}
+
+.characters-grid,
+.bosses-grid,
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+
+  width: 100%;
+  align-items: stretch;
+}
+
+.character-card,
+.boss-card,
+.location-card {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  border-radius: 15px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.character-card:hover,
+.boss-card:hover,
+.location-card:hover {
+  transform: translateY(-7px);
+  border-color: var(--game-accent);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
+}
+
+.character-image {
+  width: 100%;
+  height: 270px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 15px;
+  box-sizing: border-box;
+
+  background: radial-gradient(
+    circle,
+    rgba(85, 184, 255, 0.12),
+    transparent 72%
+  );
+
+  overflow: hidden;
+}
+
+.character-image img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform 0.35s ease;
+}
+
+.character-card:hover .character-image img {
+  transform: scale(1.07);
+}
+
+.boss-image {
+  width: 100%;
+  height: 210px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 12px;
+  box-sizing: border-box;
+
+  background: rgba(85, 184, 255, 0.06);
+  overflow: hidden;
+}
+
+.boss-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+  object-position: center;
+
+  transition: transform 0.35s ease;
+}
+
+.boss-card:hover .boss-image img {
+  transform: scale(1.05);
+}
+
+.location-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.location-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.4s ease;
+}
+
+.location-card:hover .location-image img {
+  transform: scale(1.06);
+}
+
+.character-info,
+.boss-info,
+.location-info {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 18px;
+}
+
+.character-info h3,
+.boss-info h3,
+.location-info h3 {
+  color: var(--game-accent);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.character-info p,
+.boss-info p,
+.location-info p {
+  color: var(--muted-color);
+  font-size: 0.93rem;
+  line-height: 1.7;
+
+  margin-bottom: 18px;
+}
+
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: auto;
+  padding: 10px 17px;
+
+  color: var(--game-accent);
+  background: var(--game-accent-soft);
+
+  border: 1px solid rgba(85, 184, 255, 0.3);
+  border-radius: 8px;
+
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: 0.25s;
+}
+
+.card-link:hover {
+  background: var(--game-accent);
+  color: #08111f;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.gallery-grid img {
+  display: block;
+
+  width: 100%;
+  height: 220px;
+
+  object-fit: cover;
+  border-radius: 12px;
+
+  border: 1px solid var(--border-color);
+
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.035);
+}
+
+@media (max-width: 900px) {
+  .game-hero {
+    min-height: 430px;
+    padding: 50px;
+  }
+
+  .game-overview {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .characters-grid,
+  .bosses-grid,
+  .locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .game-hero {
+    width: 92%;
+    min-height: 380px;
+    padding: 30px 24px;
+    margin: 20px auto 40px;
+  }
+
+  .game-hero p {
+    font-size: 0.95rem;
+  }
+
+  .game-section,
+  .game-overview,
+  .story-section {
+    width: 90%;
+  }
+
+  .characters-grid,
+  .bosses-grid,
+  .locations-grid,
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-image {
+    height: 290px;
+  }
+
+  .boss-image {
+    height: 220px;
+  }
+
+  .location-image {
+    height: 210px;
+  }
+
+  .game-details {
+    grid-template-columns: 1fr;
+  }
+
+  .story-section {
+    padding: 24px;
+  }
+
+  .overview-image {
+    height: 250px;
+  }
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.characters-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+
+  width: 100%;
+  max-width: 1150px;
+
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.characters-grid .game-card {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  background: linear-gradient(145deg, #17243a, #0d1525);
+
+  border: 1px solid #293d59;
+  border-radius: 16px;
+
+  padding: 16px;
+  text-align: center;
+
+  transition: 0.3s ease;
+}
+
+.characters-grid .game-card:hover {
+  transform: translateY(-8px);
+  border-color: #55b8ff;
+  box-shadow: 0 12px 30px rgba(40, 150, 255, 0.18);
+}
+
+.characters-grid .game-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 11px;
+  margin-bottom: 17px;
+}
+
+.characters-grid .game-card h3 {
+  color: #fff;
+  font-size: 23px;
+}
+
+.characters-grid .game-card p {
+  color: #aebed2;
+  line-height: 1.6;
+}
+
+.characters-grid .details-button {
+  margin-top: auto;
+}
+
+@media (max-width: 850px) {
+  .characters-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 550px) {
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.navigation a i,
+.header-button i,
+.primary-button i {
+  margin-right: 7px;
+  font-size: 0.95em;
+}
+
+.navigation a i {
+  opacity: 0.85;
+}
+
+.navigation a:hover i,
+.header-button:hover i,
+.primary-button:hover i {
+  opacity: 1;
+}
