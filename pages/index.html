@@ -20,31 +20,80 @@
   </head>
 
   <body>
-    <!-- HEADER -->
     <header class="header">
       <div class="header-container">
-        <a href="index.html" class="logo"> GAME<span>VERSE</span> </a>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          GAME<span>VERSE</span>
+        </a>
+
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+
+        <label
+          for="menu-toggle"
+          class="burger-menu"
+          aria-label="Toggle navigation"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
         <nav class="navigation" aria-label="Main navigation">
-          <a href="index.html" class="active">Home</a>
-          <a href="#games">Games</a>
-          <a href="#categories">Categories</a>
-          <a href="#about">About</a>
+          <a href="index.html" class="active">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            Home
+          </a>
+
+          <a href="#games">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            Games
+          </a>
+
+          <a href="#categories">
+            <i class="fa-solid fa-layer-group" aria-hidden="true"></i>
+            Categories
+          </a>
+
+          <a href="#about">
+            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+            About
+          </a>
         </nav>
 
-        <a href="#games" class="header-button">
-          Explore Games
-          <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
-        </a>
+        <div class="header-actions">
+          <a href="#games" class="header-button">
+            Explore Games
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+
+          <div class="auth-buttons">
+            <a href="login.html" class="login-button">
+              <i class="fa-regular fa-user" aria-hidden="true"></i>
+              Log In
+            </a>
+
+            <a href="signup.html" class="signup-button">
+              Sign Up
+              <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
       <section class="hero">
         <div class="hero-content">
-          <p class="hero-label">YOUR WORLD OF INDIE GAMES</p>
+          <p class="hero-label">
+            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+            YOUR WORLD OF INDIE GAMES
+          </p>
 
-          <h1>DISCOVER YOUR NEXT <span>ADVENTURE</span></h1>
+          <h1>
+            DISCOVER YOUR NEXT
+            <span>ADVENTURE</span>
+          </h1>
 
           <p class="hero-description">
             Explore unique worlds, meet unforgettable characters and discover
@@ -57,13 +106,28 @@
               <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
             </a>
 
-            <a href="#about" class="secondary-button"> Learn More </a>
+            <a href="#about" class="secondary-button">
+              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+              Learn More
+            </a>
+          </div>
+
+          <div class="hero-features">
+            <div>
+              <i class="fa-solid fa-compass" aria-hidden="true"></i>
+              <span>Explore Worlds</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-star" aria-hidden="true"></i>
+              <span>Discover Games</span>
+            </div>
           </div>
         </div>
 
         <div class="hero-image">
           <img
-            src="GameVerse-featured-gaming-artwork.png"
+            src="../images/icons/GameVerse-featured-gaming-artwork.png"
             alt="GameVerse featured gaming artwork"
           />
         </div>
@@ -90,7 +154,7 @@
               aria-label="Discover Hollow Knight"
             >
               <img
-                src="hollow-knight-back1.jpg"
+                src="../images/hollow-knight-details/hollow-knight-back1.jpg"
                 alt="Hollow Knight game artwork"
               />
             </a>
@@ -107,7 +171,7 @@
 
               <div class="game-platforms">
                 <span>
-                  <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+                  <i class="fa-brands fa-windows" aria-hidden="true"></i>
                   PC
                 </span>
 
@@ -130,7 +194,10 @@
               class="game-image"
               aria-label="Discover Undertale"
             >
-              <img src="undertale-back1.jpg" alt="Undertale game artwork" />
+              <img
+                src="../images/undertale/undertale-background1.jpg"
+                alt="Undertale game artwork"
+              />
             </a>
 
             <div class="game-info">
@@ -145,7 +212,7 @@
 
               <div class="game-platforms">
                 <span>
-                  <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+                  <i class="fa-brands fa-windows" aria-hidden="true"></i>
                   PC
                 </span>
 
@@ -213,6 +280,10 @@
 
       <section class="about-section" id="about">
         <div class="about-content">
+          <div class="about-icon">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          </div>
+
           <p class="section-label">ABOUT OUR WEBSITE</p>
 
           <h2>Welcome to GameVerse</h2>
@@ -233,9 +304,30 @@
 
     <footer class="footer">
       <div class="footer-container">
-        <a href="index.html" class="logo"> GAME<span>VERSE</span> </a>
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          GAME<span>VERSE</span>
+        </a>
 
         <p>Discover worlds beyond imagination.</p>
+
+        <div class="social-icons" aria-label="Social media icons">
+          <span aria-label="Discord">
+            <i class="fa-brands fa-discord" aria-hidden="true"></i>
+          </span>
+
+          <span aria-label="YouTube">
+            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+          </span>
+
+          <span aria-label="Instagram">
+            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+          </span>
+
+          <span aria-label="X">
+            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+          </span>
+        </div>
 
         <p class="copyright">© 2026 GameVerse. All rights reserved.</p>
       </div>

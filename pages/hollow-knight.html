@@ -1,8 +1,15 @@
 <!doctype html>
-<html lang="ka">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Explore Hollow Knight, discover its characters, bosses, locations and the mysterious world of Hallownest."
+    />
+
+    <meta name="theme-color" content="#080f1c" />
 
     <title>Hollow Knight | GameVerse</title>
 
@@ -20,31 +27,54 @@
       <div class="header-container">
         <a href="index.html" class="logo"> GAME<span>VERSE</span> </a>
 
-        <nav class="navigation">
+        <input
+          type="checkbox"
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-label="Toggle navigation menu"
+          aria-controls="main-navigation"
+        />
+
+        <label for="nav-toggle" class="menu-toggle" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav
+          class="navigation"
+          id="main-navigation"
+          aria-label="Main navigation"
+        >
           <a href="#story">
-    <i class="fa-solid fa-book-open"></i> Story
-  </a>
+            <i class="fa-solid fa-book-open"></i>
+            Story
+          </a>
 
-  <a href="#characters">
-    <i class="fa-solid fa-users"></i> Characters
-  </a>
+          <a href="#characters">
+            <i class="fa-solid fa-users"></i>
+            Characters
+          </a>
 
-  <a href="#bosses">
-    <i class="fa-solid fa-skull"></i> Bosses
-  </a>
+          <a href="#bosses">
+            <i class="fa-solid fa-skull"></i>
+            Bosses
+          </a>
 
-  <a href="#locations">
-    <i class="fa-solid fa-map-location-dot"></i> Locations
-  </a>
+          <a href="#locations">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Locations
+          </a>
 
-  <a href="#gallery">
-    <i class="fa-regular fa-images"></i> Gallery
-  </a>
-</nav>
+          <a href="#gallery">
+            <i class="fa-regular fa-images"></i>
+            Gallery
+          </a>
         </nav>
 
         <a href="index.html" class="header-button">
-          <i class="fa-solid fa-arrow-left"></i> Back Home
+          <i class="fa-solid fa-arrow-left"></i>
+          Back Home
         </a>
       </div>
     </header>
@@ -54,29 +84,71 @@
         <div class="game-hero-content">
           <p class="section-label">TEAM CHERRY PRESENTS</p>
 
-          <h1>HOLLOW KNIGHT</h1>
+          <p class="hero-kicker">A JOURNEY INTO THE UNKNOWN</p>
 
-          <p>
+          <h1>
+            HOLLOW
+            <span>KNIGHT</span>
+          </h1>
+
+          <p class="hero-description">
             Beneath the fading town of Dirtmouth sleeps an ancient kingdom.
-            Discover its secrets and explore Hallownest.
+            Discover forgotten places, meet mysterious characters and explore
+            the depths of Hallownest.
           </p>
 
-          <a href="#story" class="primary-button">
-            Explore the World
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+          <div class="hero-actions">
+            <a href="#story" class="primary-button">
+              Explore the World
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#characters" class="secondary-button">
+              Meet the Characters
+              <i class="fa-solid fa-users"></i>
+            </a>
+          </div>
+
+          <div class="hero-meta">
+            <span>TEAM CHERRY</span>
+            <span class="hero-meta-line"></span>
+            <span>METROIDVANIA</span>
+            <span class="hero-meta-line"></span>
+            <span>2017</span>
+          </div>
+        </div>
+
+        <div class="game-hero-visual">
+          <div class="hero-image-frame">
+            <img
+              src="../images/hollow-knight/hollowknight-hollownest.jpg"
+              alt=""
+              fetchpriority="high"
+              decoding="async"
+            />
+          </div>
+
+          <div class="hero-image-caption">
+            <span>HALLOWNEST</span>
+            <span>THE KINGDOM BELOW</span>
+          </div>
         </div>
       </section>
 
-      <section class="game-overview">
+      <section class="game-overview" aria-labelledby="overview-title">
         <div class="overview-image">
-          <img src="" alt="" />
+          <img
+            src="../images/hollow-knight/City_of_Tears_Fountain_Square.webp"
+            alt="City of Tears in Hollow Knight"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
 
         <div class="overview-content">
           <p class="section-label">GAME OVERVIEW</p>
 
-          <h2>A Journey Through Hallownest</h2>
+          <h2 id="overview-title">A Journey Through Hallownest</h2>
 
           <p>
             Hollow Knight is a 2D action-adventure game developed by Team
@@ -86,22 +158,34 @@
 
           <div class="game-details">
             <div>
-              <span><i class="fa-solid fa-code"></i> Developer</span>
+              <span>
+                <i class="fa-solid fa-code"></i>
+                Developer
+              </span>
               <strong>Team Cherry</strong>
             </div>
 
             <div>
-              <span><i class="fa-solid fa-gamepad"></i> Genre</span>
+              <span>
+                <i class="fa-solid fa-gamepad"></i>
+                Genre
+              </span>
               <strong>Metroidvania</strong>
             </div>
 
             <div>
-              <span><i class="fa-regular fa-calendar"></i> Release</span>
+              <span>
+                <i class="fa-regular fa-calendar"></i>
+                Release
+              </span>
               <strong>2017</strong>
             </div>
 
             <div>
-              <span><i class="fa-solid fa-desktop"></i> Platform</span>
+              <span>
+                <i class="fa-solid fa-desktop"></i>
+                Platform
+              </span>
               <strong>PC, Console</strong>
             </div>
           </div>
@@ -110,8 +194,15 @@
             <p>Available Platforms</p>
 
             <div class="platform-icons">
-              <span><i class="fa-solid fa-desktop"></i> PC</span>
-              <span><i class="fa-solid fa-gamepad"></i> Console</span>
+              <span>
+                <i class="fa-solid fa-desktop"></i>
+                PC
+              </span>
+
+              <span>
+                <i class="fa-solid fa-gamepad"></i>
+                Console
+              </span>
             </div>
           </div>
 
@@ -142,7 +233,10 @@
       <section class="story-section" id="story">
         <p class="section-label">THE WORLD OF HALLOWNEST</p>
 
-        <h2><i class="fa-solid fa-book-open"></i> The Story</h2>
+        <h2>
+          <i class="fa-solid fa-book-open"></i>
+          The Story
+        </h2>
 
         <p>
           Far below the surface lies Hallownest, a forgotten kingdom filled with
@@ -152,65 +246,104 @@
         </p>
 
         <a href="#characters" class="text-button">
-          Meet the Characters <i class="fa-solid fa-arrow-down"></i>
+          Meet the Characters
+          <i class="fa-solid fa-arrow-down"></i>
         </a>
       </section>
 
-      <section class="characters-section" id="characters">
+      <section
+        class="characters-section"
+        id="characters"
+        aria-labelledby="characters-title"
+      >
         <div class="section-heading">
           <div>
             <p class="section-label">MEET THE INHABITANTS</p>
-            <h2><i class="fa-solid fa-users"></i> Characters</h2>
+
+            <h2 id="characters-title">
+              <i class="fa-solid fa-users"></i>
+              Characters
+            </h2>
           </div>
         </div>
 
         <div class="characters-grid">
           <article class="character-card">
-            <img src="hollow-knight-switch.jpg.avif" alt="The Knight" />
+            <img
+              src="../images/hollow-knight/hollow-knight-switch.jpg.avif"
+              alt="The Knight"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>The Knight</h3>
 
             <p>The mysterious traveler of Hallownest.</p>
 
             <a href="hollow-knight-details.html#the-knight" class="card-button">
-              Learn More <i class="fa-solid fa-arrow-right"></i>
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="character-card">
-            <img src="Hornet_Hollow_Knight_1.webp" alt="Hornet" />
+            <img
+              src="../images/hollow-knight/Hornet_Hollow_Knight_1.webp"
+              alt="Hornet"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Hornet</h3>
 
             <p>A skilled protector of the kingdom.</p>
 
             <a href="hollow-knight-details.html#hornet" class="card-button">
-              Learn More <i class="fa-solid fa-arrow-right"></i>
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="character-card">
-            <img src="Quirrel.webp" alt="Quirrel" />
+            <img
+              src="../images/hollow-knight/Quirrel.webp"
+              alt="Quirrel"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Quirrel</h3>
 
             <p>An explorer searching for answers.</p>
 
             <a href="hollow-knight-details.html#quirrel" class="card-button">
-              Learn More <i class="fa-solid fa-arrow-right"></i>
+              Learn More
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
         </div>
       </section>
 
-      <section class="bosses-section" id="bosses">
+      <section
+        class="bosses-section"
+        id="bosses"
+        aria-labelledby="bosses-title"
+      >
         <p class="section-label">DANGEROUS OPPONENTS</p>
 
-        <h2><i class="fa-solid fa-skull"></i> Notable Bosses</h2>
+        <h2 id="bosses-title">
+          <i class="fa-solid fa-skull"></i>
+          Notable Bosses
+        </h2>
 
         <div class="bosses-grid">
           <article class="boss-card">
-            <img src="Mantis_Lords_1.webp" alt="Mantis Lords" />
+            <img
+              src="../images/hollow-knight/Mantis_Lords_1.webp"
+              alt="Mantis Lords"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Mantis Lords</h3>
 
@@ -218,12 +351,18 @@
               href="hollow-knight-details.html#mantis-lords"
               class="card-button"
             >
-              View Details <i class="fa-solid fa-arrow-right"></i>
+              View Details
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="boss-card">
-            <img src="Hollow-Knight-Soul-Master.avif" alt="Soul Master" />
+            <img
+              src="../images/hollow-knight/Hollow-Knight-Soul-Master.avif"
+              alt="Soul Master"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Soul Master</h3>
 
@@ -231,12 +370,18 @@
               href="hollow-knight-details.html#soul-master"
               class="card-button"
             >
-              View Details <i class="fa-solid fa-arrow-right"></i>
+              View Details
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="boss-card">
-            <img src="Hornet_Sentinel_1.webp" alt="Hornet Sentinel" />
+            <img
+              src="../images/hollow-knight/Hornet_Sentinel_1.webp"
+              alt="Hornet Sentinel"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Hornet Sentinel</h3>
 
@@ -244,40 +389,65 @@
               href="hollow-knight-details.html#hornet-sentinel"
               class="card-button"
             >
-              View Details <i class="fa-solid fa-arrow-right"></i>
+              View Details
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
         </div>
       </section>
 
-      <section class="locations-section" id="locations">
+      <section
+        class="locations-section"
+        id="locations"
+        aria-labelledby="locations-title"
+      >
         <p class="section-label">EXPLORE HALLOWNEST</p>
 
-        <h2><i class="fa-solid fa-map-location-dot"></i> Locations</h2>
+        <h2 id="locations-title">
+          <i class="fa-solid fa-map-location-dot"></i>
+          Locations
+        </h2>
 
         <div class="locations-grid">
           <article class="location-card">
-            <img src="dirtmouth.png" alt="Dirtmouth" />
+            <img
+              src="../images/hollow-knight/dirtmouth.png"
+              alt="Dirtmouth"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Dirtmouth</h3>
 
             <a href="hollow-knight-details.html#dirtmouth" class="card-button">
-              Explore Location <i class="fa-solid fa-arrow-right"></i>
+              Explore Location
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="location-card">
-            <img src="Greenpath_in_Hollow_Knight.webp" alt="Greenpath" />
+            <img
+              src="../images/hollow-knight/Greenpath_in_Hollow_Knight.webp"
+              alt="Greenpath"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>Greenpath</h3>
 
             <a href="hollow-knight-details.html#greenpath" class="card-button">
-              Explore Location <i class="fa-solid fa-arrow-right"></i>
+              Explore Location
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
 
           <article class="location-card">
-            <img src="City_of_Tears_Fountain_Square.webp" alt="City of Tears" />
+            <img
+              src="../images/hollow-knight/City_of_Tears_Fountain_Square.webp"
+              alt="City of Tears"
+              loading="lazy"
+              decoding="async"
+            />
 
             <h3>City of Tears</h3>
 
@@ -285,29 +455,67 @@
               href="hollow-knight-details.html#city-of-tears"
               class="card-button"
             >
-              Explore Location <i class="fa-solid fa-arrow-right"></i>
+              Explore Location
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </article>
         </div>
       </section>
 
-      <section class="gallery-section" id="gallery">
+      <section
+        class="gallery-section"
+        id="gallery"
+        aria-labelledby="gallery-title"
+      >
         <p class="section-label">VISUAL JOURNEY</p>
 
-        <h2><i class="fa-regular fa-images"></i> Game Gallery</h2>
+        <h2 id="gallery-title">
+          <i class="fa-regular fa-images"></i>
+          Game Gallery
+        </h2>
 
         <div class="gallery-grid">
-          <img src="gallery1.jpg" alt="Hollow Knight gallery image 1" />
+          <img
+            src="../images/hollow-knight/gallery1.jpg"
+            alt="Hollow Knight gallery scene 1"
+            loading="lazy"
+            decoding="async"
+          />
 
-          <img src="gallery2.jpg" alt="Hollow Knight gallery image 2" />
+          <img
+            src="../images/hollow-knight/gallery2.jpg"
+            alt="Hollow Knight gallery scene 2"
+            loading="lazy"
+            decoding="async"
+          />
 
-          <img src="gallery3.jpg" alt="Hollow Knight gallery image 3" />
+          <img
+            src="../images/hollow-knight/gallery3.jpg"
+            alt="Hollow Knight gallery scene 3"
+            loading="lazy"
+            decoding="async"
+          />
 
-          <img src="gallery4.jpg" alt="Hollow Knight gallery image 4" />
+          <img
+            src="../images/hollow-knight/gallery4.jpg"
+            alt="Hollow Knight gallery scene 4"
+            loading="lazy"
+            decoding="async"
+          />
 
-          <img src="gallery5.jpg" alt="Hollow Knight gallery image 5" />
+          <img
+            src="../images/hollow-knight/gallery5.jpg"
+            alt="Hollow Knight gallery scene 5"
+            loading="lazy"
+            decoding="async"
+          />
 
-          <img src="gallery6.jpg" alt="Hollow Knight gallery image 6" />
+          <img
+            src="../images/hollow-knight/gallery6.jpg"
+            alt="Hollow Knight gallery scene 6"
+            loading="lazy"
+            decoding="async"
+          />
         </div>
       </section>
     </main>
@@ -323,7 +531,8 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <i class="fa-solid fa-globe"></i> Hollow Knight Official Website
+          <i class="fa-solid fa-globe"></i>
+          Hollow Knight Official Website
         </a>
       </div>
     </footer>

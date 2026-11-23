@@ -1,74 +1,152 @@
 .undertale-page {
   --game-accent: #55b8ff;
   --game-accent-soft: rgba(85, 184, 255, 0.12);
+  --game-border: rgba(85, 184, 255, 0.17);
 
   background: var(--bg-color);
+  overflow-x: hidden;
 }
 
 .undertale-page main {
   width: 100%;
 }
 
-.game-container {
-  width: min(1150px, 90%);
-  margin: 0 auto;
+.undertale-page .header-container {
+  position: relative;
+}
+
+.undertale-page .menu-toggle {
+  display: none;
+}
+
+.undertale-page .menu-button {
+  display: none;
+}
+
+.undertale-page .navigation a i,
+.undertale-page .header-button i,
+.undertale-page .primary-button i {
+  margin-right: 7px;
+  font-size: 0.95em;
+}
+
+.undertale-page .navigation a i {
+  opacity: 0.85;
+}
+
+.undertale-page .navigation a:hover i,
+.undertale-page .header-button:hover i,
+.undertale-page .primary-button:hover i {
+  opacity: 1;
 }
 
 .game-hero {
-  width: min(1250px, 92%);
-  min-height: 520px;
-  margin: 35px auto 65px;
+  position: relative;
+  isolation: isolate;
 
+  width: min(1350px, 94%);
+  min-height: 590px;
+  margin: 25px auto 75px;
   padding: 75px;
-  box-sizing: border-box;
 
   display: flex;
   align-items: center;
 
+  box-sizing: border-box;
+  overflow: hidden;
+
   background:
-    linear-gradient(90deg, rgba(8, 15, 28, 0.97), rgba(8, 15, 28, 0.55)),
+    linear-gradient(
+      90deg,
+      rgba(5, 10, 20, 0.96) 0%,
+      rgba(5, 10, 20, 0.78) 48%,
+      rgba(5, 10, 20, 0.2) 100%
+    ),
     url("../../images/undertale/cover/undertale-background1.jpg");
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
-  border: 1px solid var(--border-color);
-  border-radius: 20px;
-  overflow: hidden;
+  border: 1px solid var(--game-border);
+  border-radius: 22px;
 }
 
 .game-hero-content {
+  position: relative;
+  z-index: 2;
   max-width: 650px;
 }
 
 .game-hero h1 {
-  font-size: clamp(2.8rem, 6vw, 4.5rem);
   color: var(--game-accent);
-  margin: 15px 0 20px;
-  letter-spacing: 3px;
+  font-size: clamp(3.2rem, 7vw, 5.5rem);
+  font-weight: 900;
+  letter-spacing: 5px;
+  line-height: 1.1;
+  margin: 18px 0 22px;
 }
 
-.game-hero p {
+.game-hero p:not(.section-label) {
+  max-width: 590px;
   color: #e0e7f0;
   line-height: 1.9;
-  margin-bottom: 28px;
+  margin-bottom: 30px;
   font-size: 1.05rem;
+}
+
+.hero-decoration {
+  position: absolute;
+  right: 13%;
+  bottom: 16%;
+  z-index: 1;
+  color: #ff4d69;
+  font-size: clamp(5rem, 12vw, 10rem);
+  opacity: 0.8;
+  text-shadow: 0 0 45px rgba(255, 77, 105, 0.4);
+  animation: heart-float 3s ease-in-out infinite;
+}
+
+@keyframes heart-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-13px);
+  }
 }
 
 .section-label {
   color: var(--game-accent);
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 2px;
   margin-bottom: 12px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.section-number {
+  color: var(--muted-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding-bottom: 9px;
 }
 
 .game-section h2,
 .game-overview h2 {
   color: var(--text-color);
   font-size: clamp(1.8rem, 4vw, 2.5rem);
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .game-section {
@@ -79,20 +157,21 @@
 
 .game-overview {
   width: min(1150px, 90%);
-  margin: 0 auto 45px;
+  margin: 0 auto 55px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.05fr 0.95fr;
   align-items: center;
-  gap: 50px;
+  gap: 55px;
 }
 
 .overview-image {
   width: 100%;
-  height: 350px;
+  height: 390px;
   overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid var(--border-color);
+  border-radius: 18px;
+  border: 1px solid var(--game-border);
+  background: var(--card-color);
 }
 
 .overview-image img {
@@ -100,6 +179,15 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.overview-image:hover img {
+  transform: scale(1.04);
+}
+
+.overview-content h2 {
+  margin-bottom: 20px;
 }
 
 .overview-content p:not(.section-label) {
@@ -111,7 +199,7 @@
 .game-details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 14px;
+  gap: 13px;
   margin-top: 28px;
 }
 
@@ -119,19 +207,19 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-
   padding: 17px;
-  background: var(--card-color);
 
+  background: var(--card-color);
   border: 1px solid var(--border-color);
   border-radius: 11px;
 
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .game-details > div:hover {
   border-color: var(--game-accent);
   background: var(--game-accent-soft);
+  transform: translateY(-3px);
 }
 
 .game-details span {
@@ -145,13 +233,30 @@
 }
 
 .story-section {
+  position: relative;
   width: min(1150px, 90%);
   margin: 40px auto;
-  padding: 40px;
+  padding: 48px;
 
-  background: var(--card-color);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
+  background:
+    linear-gradient(120deg, rgba(85, 184, 255, 0.08), transparent 65%),
+    var(--card-color);
+
+  border: 1px solid var(--game-border);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.story-section::after {
+  content: "UNDERTALE";
+  position: absolute;
+  right: 25px;
+  bottom: -15px;
+  color: rgba(85, 184, 255, 0.045);
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 5px;
+  pointer-events: none;
 }
 
 .story-section h2 {
@@ -161,19 +266,17 @@
 }
 
 .story-section p:last-child {
+  position: relative;
+  z-index: 1;
   color: var(--muted-color);
   line-height: 1.9;
   max-width: 900px;
 }
 
-.characters-grid,
-.bosses-grid,
-.locations-grid {
+.characters-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
-
-  width: 100%;
   align-items: stretch;
 }
 
@@ -181,15 +284,13 @@
 .boss-card,
 .location-card {
   min-width: 0;
-
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 
   background: var(--card-color);
   border: 1px solid var(--border-color);
   border-radius: 15px;
-
-  overflow: hidden;
 
   transition:
     transform 0.3s ease,
@@ -202,24 +303,21 @@
 .location-card:hover {
   transform: translateY(-7px);
   border-color: var(--game-accent);
-
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.22);
 }
 
 .character-image {
   width: 100%;
-  height: 270px;
-
+  height: 265px;
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 15px;
   box-sizing: border-box;
 
   background: radial-gradient(
     circle,
-    rgba(85, 184, 255, 0.12),
+    rgba(85, 184, 255, 0.13),
     transparent 72%
   );
 
@@ -228,13 +326,10 @@
 
 .character-image img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: contain;
   object-position: center;
-
   transition: transform 0.35s ease;
 }
 
@@ -242,17 +337,26 @@
   transform: scale(1.07);
 }
 
+.bosses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.boss-card {
+  background:
+    linear-gradient(145deg, rgba(85, 184, 255, 0.07), transparent 65%),
+    var(--card-color);
+}
+
 .boss-image {
   width: 100%;
-  height: 210px;
-
+  height: 230px;
   display: flex;
   justify-content: center;
   align-items: center;
-
   padding: 12px;
   box-sizing: border-box;
-
   background: rgba(85, 184, 255, 0.06);
   overflow: hidden;
 }
@@ -260,22 +364,25 @@
 .boss-image img {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: contain;
   object-position: center;
-
   transition: transform 0.35s ease;
 }
 
 .boss-card:hover .boss-image img {
-  transform: scale(1.05);
+  transform: scale(1.06);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px;
 }
 
 .location-image {
   width: 100%;
-  height: 200px;
+  height: 210px;
   overflow: hidden;
 }
 
@@ -283,10 +390,8 @@
   display: block;
   width: 100%;
   height: 100%;
-
   object-fit: cover;
   object-position: center;
-
   transition: transform 0.4s ease;
 }
 
@@ -298,12 +403,10 @@
 .boss-info,
 .location-info {
   flex: 1;
-
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-
-  padding: 18px;
+  padding: 20px;
 }
 
 .character-info h3,
@@ -320,7 +423,6 @@
   color: var(--muted-color);
   font-size: 0.93rem;
   line-height: 1.7;
-
   margin-bottom: 18px;
 }
 
@@ -328,13 +430,11 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   margin-top: auto;
   padding: 10px 17px;
 
   color: var(--game-accent);
   background: var(--game-accent-soft);
-
   border: 1px solid rgba(85, 184, 255, 0.3);
   border-radius: 8px;
 
@@ -342,7 +442,7 @@
   font-weight: 600;
   text-decoration: none;
 
-  transition: 0.25s;
+  transition: 0.25s ease;
 }
 
 .card-link:hover {
@@ -353,42 +453,131 @@
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 220px;
   gap: 18px;
 }
 
 .gallery-grid img {
   display: block;
-
   width: 100%;
-  height: 220px;
-
+  height: 100%;
   object-fit: cover;
   border-radius: 12px;
-
   border: 1px solid var(--border-color);
-
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .gallery-grid img:hover {
-  transform: scale(1.035);
+  transform: scale(1.025);
+  border-color: var(--game-accent);
 }
 
-@media (max-width: 900px) {
+.gallery-grid img:first-child {
+  grid-row: span 2;
+  height: 100%;
+}
+
+@media (max-width: 1024px) {
   .game-hero {
-    min-height: 430px;
-    padding: 50px;
+    min-height: 500px;
+    padding: 55px;
   }
 
   .game-overview {
-    grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 35px;
   }
 
   .characters-grid,
   .bosses-grid,
   .locations-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .undertale-page .header-container {
+    flex-wrap: wrap;
+  }
+
+  .undertale-page .menu-button {
+    display: flex;
+    width: 42px;
+    height: 42px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-color);
+    z-index: 20;
+  }
+
+  .undertale-page .menu-button span {
+    display: block;
+    width: 19px;
+    height: 2px;
+    border-radius: 5px;
+    background: var(--text-color);
+    transition: 0.25s ease;
+  }
+
+  .undertale-page .menu-toggle:checked + .menu-button span:first-child {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .undertale-page .menu-toggle:checked + .menu-button span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .undertale-page .menu-toggle:checked + .menu-button span:last-child {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .undertale-page .navigation {
+    display: none;
+    order: 4;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    padding: 15px;
+    margin-top: 12px;
+
+    background: var(--card-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+  }
+
+  .undertale-page .menu-toggle:checked ~ .navigation {
+    display: flex;
+  }
+
+  .undertale-page .navigation a {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border-radius: 7px;
+  }
+
+  .undertale-page .navigation a:hover {
+    background: var(--game-accent-soft);
+  }
+
+  .undertale-page .header-button {
+    display: none;
+  }
+
+  .game-overview {
+    grid-template-columns: 1fr;
+  }
+
+  .overview-image {
+    height: 350px;
   }
 
   .gallery-grid {
@@ -399,13 +588,27 @@
 @media (max-width: 600px) {
   .game-hero {
     width: 92%;
-    min-height: 380px;
-    padding: 30px 24px;
-    margin: 20px auto 40px;
+    min-height: 440px;
+    padding: 35px 25px;
+    margin: 20px auto 45px;
+    background-position: 60% center;
   }
 
-  .game-hero p {
+  .game-hero h1 {
+    font-size: clamp(2.7rem, 12vw, 4rem);
+    letter-spacing: 2px;
+  }
+
+  .game-hero p:not(.section-label) {
     font-size: 0.95rem;
+    line-height: 1.8;
+  }
+
+  .hero-decoration {
+    right: 8%;
+    bottom: 5%;
+    font-size: 5rem;
+    opacity: 0.5;
   }
 
   .game-section,
@@ -414,11 +617,25 @@
     width: 90%;
   }
 
+  .game-section {
+    padding: 38px 0;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .section-number {
+    padding: 0;
+  }
+
   .characters-grid,
   .bosses-grid,
-  .locations-grid,
-  .gallery-grid {
+  .locations-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .character-image {
@@ -426,19 +643,33 @@
   }
 
   .boss-image {
-    height: 220px;
+    height: 240px;
   }
 
   .location-image {
-    height: 210px;
+    height: 220px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 160px;
+    gap: 12px;
+  }
+
+  .gallery-grid img:first-child {
+    grid-row: span 1;
   }
 
   .game-details {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 
   .story-section {
-    padding: 24px;
+    padding: 28px 23px;
+  }
+
+  .story-section h2 {
+    font-size: 1.7rem;
   }
 
   .overview-image {
@@ -446,99 +677,38 @@
   }
 }
 
-.characters-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-  max-width: 1150px;
-  margin: 0 auto;
-}
-
-.characters-grid {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 28px;
-
-  width: 100%;
-  max-width: 1150px;
-
-  margin: 0 auto;
-  align-items: stretch;
-}
-
-.characters-grid .game-card {
-  width: 100%;
-  min-width: 0;
-  box-sizing: border-box;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background: linear-gradient(145deg, #17243a, #0d1525);
-
-  border: 1px solid #293d59;
-  border-radius: 16px;
-
-  padding: 16px;
-  text-align: center;
-
-  transition: 0.3s ease;
-}
-
-.characters-grid .game-card:hover {
-  transform: translateY(-8px);
-  border-color: #55b8ff;
-  box-shadow: 0 12px 30px rgba(40, 150, 255, 0.18);
-}
-
-.characters-grid .game-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 11px;
-  margin-bottom: 17px;
-}
-
-.characters-grid .game-card h3 {
-  color: #fff;
-  font-size: 23px;
-}
-
-.characters-grid .game-card p {
-  color: #aebed2;
-  line-height: 1.6;
-}
-
-.characters-grid .details-button {
-  margin-top: auto;
-}
-
-@media (max-width: 850px) {
-  .characters-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 550px) {
-  .characters-grid {
+@media (max-width: 380px) {
+  .game-details {
     grid-template-columns: 1fr;
   }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+
+  .game-hero {
+    padding: 28px 20px;
+  }
+
+  .game-hero h1 {
+    font-size: 2.5rem;
+  }
 }
 
-.navigation a i,
-.header-button i,
-.primary-button i {
-  margin-right: 7px;
-  font-size: 0.95em;
+.undertale-page a:focus-visible,
+.undertale-page input:focus-visible,
+.undertale-page label:focus-visible {
+  outline: 2px solid var(--game-accent);
+  outline-offset: 4px;
 }
 
-.navigation a i {
-  opacity: 0.85;
-}
-
-.navigation a:hover i,
-.header-button:hover i,
-.primary-button:hover i {
-  opacity: 1;
+@media (prefers-reduced-motion: reduce) {
+  .undertale-page *,
+  .undertale-page *::before,
+  .undertale-page *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1,664 +1,1063 @@
 .hollow-knight-page {
-  --game-accent: #55b8ff;
+  --bg: #080f1c;
+  --bg-soft: #0d1522;
+  --card: #101d30;
+  --card-light: #15263b;
+  --text: #edf4fc;
+  --muted: #9baec5;
+  --accent: #55b8ff;
+  --accent-dark: #2688c7;
+  --line: rgba(85, 184, 255, 0.15);
+
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", sans-serif;
+  line-height: 1.65;
 }
 
-.game-hero {
-  width: 100%;
-  min-height: 550px;
+.hollow-knight-page *,
+.hollow-knight-page *::before,
+.hollow-knight-page *::after {
   box-sizing: border-box;
+}
 
-  background:
-    linear-gradient(rgba(8, 15, 28, 0.45), rgba(8, 15, 28, 0.75)),
-    url(hollow-knight-pc-mac-steam-cover.jpg);
+.hollow-knight-page img {
+  display: block;
+  max-width: 100%;
+}
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.hollow-knight-page a {
+  color: inherit;
+  text-decoration: none;
+}
 
+.hollow-knight-page section {
+  scroll-margin-top: 100px;
+}
+
+.hollow-knight-page .header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 15, 28, 0.96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(16px);
+}
+
+.hollow-knight-page .header-container {
+  position: relative;
+  width: min(1200px, 92%);
+  min-height: 85px;
+  margin: 0 auto;
+  padding: 0 25px;
   display: flex;
   align-items: center;
-  padding: 80px;
-}
-
-.game-hero-content {
-  max-width: 650px;
-}
-
-.game-hero h1 {
-  font-size: 3.5rem;
-  color: var(--game-accent);
-  margin-bottom: 20px;
-}
-
-.game-hero p {
-  color: var(--text-color);
-  line-height: 1.8;
-  margin-bottom: 25px;
-}
-
-.game-section {
-  padding: 55px 0;
-}
-
-.game-section h2 {
-  font-size: 2rem;
-  color: var(--game-accent);
-  margin-bottom: 25px;
-}
-
-.game-overview {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 35px;
-  align-items: center;
-}
-
-.overview-image {
-  width: 100%;
-  border-radius: 14px;
-  object-fit: cover;
-}
-
-.overview-content p {
-  color: var(--muted-color);
-  line-height: 1.8;
-  margin-bottom: 15px;
-}
-
-.game-details {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  margin-top: 25px;
-}
-
-.detail-item {
-  background: var(--card-color);
-  padding: 18px;
-  border-radius: 10px;
-  border: 1px solid var(--border-color);
-}
-
-.detail-item h3 {
-  color: var(--game-accent);
-  margin-bottom: 8px;
-}
-
-.detail-item p {
-  color: var(--muted-color);
-}
-
-.story-section {
-  background: var(--card-color);
-  padding: 35px;
-  border-radius: 14px;
-  margin-top: 35px;
-}
-
-.story-section p {
-  line-height: 1.9;
-  color: var(--muted-color);
-}
-
-.character-grid,
-.boss-grid,
-.location-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
   gap: 22px;
 }
 
-.character-card,
-.boss-card,
-.location-card {
-  background: var(--card-color);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
+.hollow-knight-page .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  color: var(--text);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
 }
 
-.character-card:hover,
-.boss-card:hover,
-.location-card:hover {
-  transform: translateY(-7px);
-  border-color: var(--game-accent);
+.hollow-knight-page .logo > i {
+  color: var(--accent);
+  font-size: 22px;
+  margin-right: 1px;
 }
 
-.character-card img,
-.boss-card img,
-.location-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
+.hollow-knight-page .logo span {
+  color: var(--accent);
 }
 
-.character-card h3,
-.boss-card h3,
-.location-card h3 {
-  padding: 15px 15px 5px;
-  color: var(--game-accent);
+.hollow-knight-page .navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.character-card p,
-.boss-card p,
-.location-card p {
-  padding: 5px 15px 18px;
-  color: var(--muted-color);
-  line-height: 1.6;
+.hollow-knight-page .navigation a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: 0.25s ease;
 }
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+.hollow-knight-page .navigation a i {
+  color: #9ba3af;
+  transition: color 0.25s ease;
 }
 
-.gallery-grid img {
-  width: 100%;
-  height: 210px;
-  object-fit: cover;
-  border-radius: 10px;
-  transition: 0.3s;
+.hollow-knight-page .navigation a:hover,
+.hollow-knight-page .navigation a.active {
+  color: var(--text);
+  background: rgba(85, 184, 255, 0.07);
+  border-color: var(--line);
 }
 
-.gallery-grid img:hover {
-  transform: scale(1.03);
+.hollow-knight-page .navigation a:hover i,
+.hollow-knight-page .navigation a.active i {
+  color: var(--accent);
 }
 
-@media (max-width: 900px) {
-  .game-overview {
-    grid-template-columns: 1fr;
-  }
-
-  .character-grid,
-  .boss-grid,
-  .location-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .game-hero h1 {
-    font-size: 2.7rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .character-grid,
-  .boss-grid,
-  .location-grid,
-  .gallery-grid,
-  .game-details {
-    grid-template-columns: 1fr;
-  }
-
-  .game-hero {
-    padding: 50px 25px;
-  }
-
-  .game-hero h1 {
-    font-size: 2.2rem;
-  }
-
-  .story-section {
-    padding: 20px;
-  }
-}
-
-.character-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
-}
-
-.character-card {
-  background: #101d30;
-  border: 1px solid rgba(85, 184, 255, 0.2);
-  border-radius: 14px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.character-card img {
-  width: 100%;
-  height: 250px;
-  object-fit: contain;
-  padding: 15px;
-  box-sizing: border-box;
-  background: #0b1626;
-}
-
-.character-card h3 {
-  padding: 12px;
-  color: #55b8ff;
-}
-
-.character-card p {
-  padding: 0 15px 18px;
-  color: #9baec5;
-}
-
-@media (max-width: 700px) {
-  .character-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.character-card img {
-  width: 100%;
-  height: 350px;
-  object-fit: contain;
-  padding: 10px;
-  box-sizing: border-box;
-  background: #0b1626;
-}
-
-.boss-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px;
-}
-
-.boss-card {
-  width: 100%;
-  min-width: 0;
-  background: #101d30;
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.boss-card img {
-  display: block;
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  object-position: center;
-}
-
-.boss-card h3 {
-  padding: 15px;
-  color: #55b8ff;
-}
-
-.boss-card p {
-  padding: 0 15px 18px;
-  color: #9baec5;
-}
-
-.boss-card img {
-  display: block;
-  width: 100%;
-  height: 280px;
-  object-fit: contain;
-  object-position: center;
-  padding: 10px;
-  box-sizing: border-box;
-  background-color: #0b1626;
-}
-
-.character-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-  max-width: 1050px;
-  margin: 0 auto;
-}
-
-.character-card {
-  min-width: 0;
-  border-radius: 12px;
-  background: #101d30;
-  overflow: hidden;
-}
-
-.character-card img {
-  width: 100%;
-  height: 220px;
-  padding: 8px;
-  box-sizing: border-box;
-  object-fit: contain;
-}
-
-.character-card h3 {
-  font-size: 19px;
-  padding: 10px;
-}
-
-.character-card p {
+.hollow-knight-page .header-button {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 15px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--accent);
   font-size: 13px;
-  padding: 0 12px 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: 0.25s ease;
 }
 
-.boss-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  max-width: 900px;
-  margin: 0 auto;
+.hollow-knight-page .header-button:hover {
+  background: var(--accent);
+  color: #080f1c;
 }
 
-.boss-card img {
-  height: 220px;
+.hollow-knight-page .nav-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
 }
 
-@media (max-width: 750px) {
-  .character-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .character-grid,
-  .boss-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.characters-section,
-.bosses-section,
-.locations-section,
-.gallery-section {
-  padding: 55px 8%;
-}
-
-.characters-grid,
-.bosses-grid,
-.locations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  margin-top: 25px;
-}
-
-.character-card,
-.boss-card,
-.location-card {
-  background: #101d30;
-  border: 1px solid rgba(85, 184, 255, 0.18);
-  border-radius: 14px;
-  overflow: hidden;
-  transition: 0.3s ease;
-}
-
-.character-card:hover,
-.boss-card:hover,
-.location-card:hover {
-  transform: translateY(-5px);
-  border-color: #55b8ff;
-}
-
-.character-card img {
-  width: 100%;
-  height: 280px;
-  padding: 10px;
-  box-sizing: border-box;
-  object-fit: contain;
-  background: #0b1626;
-}
-
-.character-card h3,
-.boss-card h3,
-.location-card h3 {
-  color: #55b8ff;
-  font-size: 21px;
-  padding: 14px 16px;
-}
-
-.boss-card img {
-  width: 100%;
-  height: 280px;
-  padding: 10px;
-  box-sizing: border-box;
-  object-fit: contain;
-  background: #0b1626;
-}
-
-.location-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-.story-section {
-  margin: 45px 8%;
-  padding: 35px;
-  background: #101d30;
-  border: 1px solid rgba(85, 184, 255, 0.18);
-  border-radius: 14px;
-}
-
-.story-section h2 {
-  color: #55b8ff;
-  margin: 12px 0 18px;
-}
-
-.story-section p:last-child {
-  color: #9baec5;
-  line-height: 1.8;
-}
-
-@media (max-width: 750px) {
-  .characters-grid,
-  .bosses-grid,
-  .locations-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 500px) {
-  .characters-grid,
-  .bosses-grid,
-  .locations-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .characters-section,
-  .bosses-section,
-  .locations-section,
-  .gallery-section {
-    padding: 35px 5%;
-  }
-}
-
-.platform-support {
-  margin-top: 25px;
-}
-
-.platform-support > p {
-  font-size: 14px;
-  color: #aab6c8;
-  margin-bottom: 12px;
-}
-
-.platform-icons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.platform-icons span {
-  display: flex;
+.hollow-knight-page .menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
   align-items: center;
-  gap: 9px;
-  padding: 10px 16px;
-  background: #111e30;
-  border: 1px solid #26374e;
-  border-radius: 6px;
-  color: #eaf1ff;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--card);
+  cursor: pointer;
+}
+
+.hollow-knight-page .menu-toggle span {
+  width: 20px;
+  height: 2px;
+  border-radius: 3px;
+  background: var(--text);
+  transition: 0.25s ease;
+}
+
+.hollow-knight-page .nav-toggle:focus-visible + .menu-toggle {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.hollow-knight-page .game-hero {
+  width: min(1240px, 92%);
+  min-height: 540px;
+  margin: 28px auto 0;
+  padding: 60px clamp(25px, 5vw, 65px);
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: 45px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background:
+    radial-gradient(
+      ellipse at 85% 45%,
+      rgba(38, 136, 199, 0.18),
+      transparent 45%
+    ),
+    linear-gradient(135deg, #101d30, #080f1c 75%);
+}
+
+.hollow-knight-page .game-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 570px;
+}
+
+.hollow-knight-page .section-label {
+  margin: 0 0 14px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.hollow-knight-page .hero-kicker {
+  margin: 0 0 13px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.hollow-knight-page .game-hero h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 6.3vw, 82px);
+  font-weight: 850;
+  letter-spacing: -3px;
+  line-height: 0.98;
+}
+
+.hollow-knight-page .game-hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hollow-knight-page .hero-description {
+  max-width: 510px;
+  margin: 25px 0;
+  color: #c1cfdf;
   font-size: 14px;
+  line-height: 1.9;
 }
 
-.platform-icons i {
-  color: #63b3ed;
-}
-
-.game-links {
+.hollow-knight-page .hero-actions,
+.hollow-knight-page .game-links {
   display: flex;
-  gap: 12px;
   flex-wrap: wrap;
-  margin-top: 22px;
+  gap: 12px;
 }
 
-.secondary-button,
-.card-button,
-.text-button {
+.hollow-knight-page .primary-button,
+.hollow-knight-page .secondary-button,
+.hollow-knight-page .card-button,
+.hollow-knight-page .text-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 9px;
-  text-decoration: none;
+  font-weight: 700;
   transition: 0.25s ease;
 }
 
-.secondary-button {
-  padding: 12px 18px;
-  border: 1px solid #40516a;
+.hollow-knight-page .primary-button {
+  padding: 13px 20px;
+  border: 1px solid var(--accent);
   border-radius: 6px;
-  color: #eaf1ff;
-  font-size: 14px;
-}
-
-.secondary-button:hover {
-  background: #1c3049;
-  border-color: #63b3ed;
-}
-
-.card-button {
-  margin-top: 12px;
-  padding: 9px 13px;
-  background: #14263c;
-  border: 1px solid #2d4562;
-  border-radius: 5px;
-  color: #8ccaff;
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: #071321;
   font-size: 13px;
 }
 
-.card-button:hover {
-  background: #244363;
-  color: white;
-  transform: translateY(-2px);
+.hollow-knight-page .primary-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(85, 184, 255, 0.2);
 }
 
-.text-button {
-  margin-top: 20px;
-  color: #76baff;
+.hollow-knight-page .secondary-button {
+  padding: 12px 18px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.025);
+  color: var(--text);
+  font-size: 13px;
+}
+
+.hollow-knight-page .secondary-button:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent);
+  background: rgba(85, 184, 255, 0.08);
+}
+
+.hollow-knight-page .hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 35px;
+  color: #849ab1;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.hollow-knight-page .hero-meta-line {
+  width: 23px;
+  height: 1px;
+  background: var(--accent-dark);
+}
+
+.hollow-knight-page .game-hero-visual {
+  width: 100%;
+  min-width: 0;
+}
+
+.hollow-knight-page .hero-image-frame {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border: 1px solid rgba(85, 184, 255, 0.25);
+  border-radius: 12px;
+  background: #0b1727;
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.35);
+}
+
+.hollow-knight-page .hero-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+.hollow-knight-page .hero-image-frame:hover img {
+  transform: scale(1.04);
+}
+
+.hollow-knight-page .hero-image-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 13px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.hollow-knight-page .hero-image-caption span:first-child {
+  color: var(--accent);
+}
+
+.hollow-knight-page .game-overview {
+  width: min(1160px, 88%);
+  margin: 100px auto;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.hollow-knight-page .overview-image {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+}
+
+.hollow-knight-page .overview-image img {
+  width: 100%;
+  height: 410px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.hollow-knight-page .overview-image:hover img {
+  transform: scale(1.035);
+}
+
+.hollow-knight-page .overview-content h2 {
+  margin: 0 0 17px;
+  color: var(--text);
+  font-size: clamp(28px, 3.3vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hollow-knight-page .overview-content > p:not(.section-label) {
+  margin: 0 0 22px;
+  color: var(--muted);
   font-size: 14px;
-  text-decoration: none;
+  line-height: 1.9;
 }
 
-.text-button:hover {
-  color: white;
+.hollow-knight-page .game-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 25px;
 }
 
-.story-section h2 i,
-.characters-section h2 i,
-.bosses-section h2 i,
-.locations-section h2 i,
-.gallery-section h2 i {
-  color: #65b5f5;
-  font-size: 0.8em;
-  margin-right: 7px;
-}
-
-.character-card,
-.boss-card,
-.location-card {
+.hollow-knight-page .game-details > div {
+  min-width: 0;
   display: flex;
   flex-direction: column;
+  gap: 7px;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: linear-gradient(145deg, var(--card-light), var(--card));
 }
 
-.character-card .card-button,
-.boss-card .card-button,
-.location-card .card-button {
+.hollow-knight-page .game-details span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hollow-knight-page .game-details span i {
+  margin-right: 6px;
+  color: var(--accent-dark);
+}
+
+.hollow-knight-page .game-details strong {
+  color: var(--text);
+  font-size: 14px;
+}
+
+.hollow-knight-page .platform-support {
+  margin-top: 22px;
+}
+
+.hollow-knight-page .platform-support > p {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hollow-knight-page .platform-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.hollow-knight-page .platform-icons span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  color: var(--text);
+  font-size: 12px;
+}
+
+.hollow-knight-page .platform-icons i {
+  color: var(--accent);
+}
+
+.hollow-knight-page .game-links {
+  margin-top: 24px;
+}
+
+.hollow-knight-page .story-section h2,
+.hollow-knight-page .characters-section h2,
+.hollow-knight-page .bosses-section h2,
+.hollow-knight-page .locations-section h2,
+.hollow-knight-page .gallery-section h2 {
+  margin: 10px 0 20px;
+  color: var(--text);
+  font-size: clamp(28px, 3.5vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.hollow-knight-page .story-section h2 i,
+.hollow-knight-page .characters-section h2 i,
+.hollow-knight-page .bosses-section h2 i,
+.hollow-knight-page .locations-section h2 i,
+.hollow-knight-page .gallery-section h2 i {
+  margin-right: 8px;
+  color: var(--accent);
+  font-size: 0.8em;
+}
+
+.hollow-knight-page .story-section {
+  position: relative;
+  width: min(1100px, 88%);
+  margin: 85px auto;
+  padding: 45px 50px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent-dark);
+  border-radius: 6px 12px 12px 6px;
+  background:
+    radial-gradient(
+      ellipse at 100% 0%,
+      rgba(85, 184, 255, 0.09),
+      transparent 55%
+    ),
+    var(--card);
+}
+
+.hollow-knight-page .story-section::after {
+  content: "HALLOWNEST";
+  position: absolute;
+  right: 20px;
+  bottom: -18px;
+  color: rgba(85, 184, 255, 0.035);
+  font-size: clamp(55px, 9vw, 105px);
+  font-weight: 850;
+  pointer-events: none;
+}
+
+.hollow-knight-page .story-section > p:not(.section-label) {
+  position: relative;
+  z-index: 1;
+  max-width: 850px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hollow-knight-page .text-button {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.hollow-knight-page .text-button:hover {
+  color: white;
+  transform: translateX(4px);
+}
+
+.hollow-knight-page .characters-section,
+.hollow-knight-page .bosses-section,
+.hollow-knight-page .locations-section,
+.hollow-knight-page .gallery-section {
+  width: min(1160px, 88%);
+  margin: 90px auto;
+}
+
+.hollow-knight-page .characters-grid,
+.hollow-knight-page .bosses-grid,
+.hollow-knight-page .locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 22px;
+  margin-top: 28px;
+}
+
+.hollow-knight-page .character-card,
+.hollow-knight-page .boss-card,
+.hollow-knight-page .location-card {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: linear-gradient(145deg, var(--card-light), var(--card));
+  transition: 0.3s ease;
+}
+
+.hollow-knight-page .character-card:hover,
+.hollow-knight-page .boss-card:hover,
+.hollow-knight-page .location-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(85, 184, 255, 0.5);
+  box-shadow: 0 16px 35px rgba(0, 0, 0, 0.22);
+}
+
+.hollow-knight-page .character-card img {
+  width: 100%;
+  height: 260px;
+  padding: 14px;
+  object-fit: contain;
+  background: #0b1626;
+  border-bottom: 1px solid var(--line);
+}
+
+.hollow-knight-page .boss-card img,
+.hollow-knight-page .location-card img {
+  width: 100%;
+  height: 225px;
+  object-fit: cover;
+  background: #0b1626;
+  border-bottom: 1px solid var(--line);
+  transition: transform 0.45s ease;
+}
+
+.hollow-knight-page .boss-card:hover img,
+.hollow-knight-page .location-card:hover img {
+  transform: scale(1.035);
+}
+
+.hollow-knight-page .character-card h3,
+.hollow-knight-page .boss-card h3,
+.hollow-knight-page .location-card h3 {
+  margin: 0;
+  padding: 18px 18px 8px;
+  color: var(--accent);
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.hollow-knight-page .character-card p,
+.hollow-knight-page .boss-card p,
+.hollow-knight-page .location-card p {
+  margin: 0;
+  padding: 0 18px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.hollow-knight-page .card-button {
   align-self: flex-start;
-  margin-top: auto;
+  margin: auto 18px 20px;
+  padding: 10px 15px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: rgba(85, 184, 255, 0.06);
+  color: var(--accent);
+  font-size: 12px;
 }
 
-.character-card p {
-  margin-bottom: 15px;
+.hollow-knight-page .card-button:hover {
+  transform: translateY(-2px);
+  background: var(--accent);
+  color: #071321;
+  border-color: var(--accent);
 }
 
-@media (max-width: 768px) {
-  .game-links {
-    flex-direction: column;
+.hollow-knight-page .gallery-section {
+  padding: 60px 0 75px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.hollow-knight-page .gallery-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  grid-auto-rows: 190px;
+  gap: 13px;
+  margin-top: 28px;
+}
+
+.hollow-knight-page .gallery-grid img {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  transition: 0.35s ease;
+}
+
+.hollow-knight-page .gallery-grid img:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.hollow-knight-page .gallery-grid img:hover {
+  transform: scale(1.025);
+  filter: brightness(1.12);
+}
+
+.hollow-knight-page .footer {
+  border-top: 1px solid var(--line);
+  background: #070d17;
+}
+
+.hollow-knight-page .footer-container {
+  width: min(1160px, 88%);
+  min-height: 100px;
+  margin: 0 auto;
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hollow-knight-page .footer p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hollow-knight-page .footer-container > a:last-child {
+  color: var(--accent);
+  font-size: 12px;
+  transition: color 0.25s ease;
+}
+
+.hollow-knight-page .footer-container > a:last-child:hover {
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .hollow-knight-page .header-container {
+    gap: 12px;
   }
 
-  .game-links a {
+  .hollow-knight-page .navigation {
+    gap: 2px;
+  }
+
+  .hollow-knight-page .navigation a {
+    gap: 6px;
+    padding: 9px 7px;
+    font-size: 12px;
+  }
+
+  .hollow-knight-page .header-button {
+    padding: 9px 10px;
+    font-size: 12px;
+  }
+
+  .hollow-knight-page .game-hero {
+    gap: 28px;
+    padding: 45px 35px;
+  }
+
+  .hollow-knight-page .game-overview {
+    gap: 30px;
+  }
+
+  .hollow-knight-page .characters-grid,
+  .hollow-knight-page .bosses-grid,
+  .hollow-knight-page .locations-grid {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 850px) {
+  .hollow-knight-page .header-container {
+    min-height: 72px;
+    width: 90%;
+    gap: 14px;
+  }
+
+  .hollow-knight-page .menu-toggle {
+    display: flex;
+    margin-left: auto;
+    order: 2;
+  }
+
+  .hollow-knight-page .header-button {
+    order: 3;
+  }
+
+  .hollow-knight-page .navigation {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1001;
     width: 100%;
-    box-sizing: border-box;
+    padding: 10px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    background: #0d1726;
+    border: 1px solid var(--line);
+    border-top: 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
   }
 
-  .platform-icons {
+  .hollow-knight-page .navigation a {
+    justify-content: flex-start;
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .hollow-knight-page .navigation a i {
+    width: 20px;
+    text-align: center;
+  }
+
+  .hollow-knight-page .nav-toggle:checked ~ .navigation {
+    display: flex;
+  }
+
+  .hollow-knight-page .nav-toggle:checked + .menu-toggle span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hollow-knight-page .nav-toggle:checked + .menu-toggle span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hollow-knight-page .nav-toggle:checked + .menu-toggle span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .hollow-knight-page .game-hero {
+    min-height: auto;
+    padding: 45px 30px;
+  }
+
+  .hollow-knight-page .game-overview {
+    grid-template-columns: 1fr 1fr;
+    width: 90%;
+  }
+
+  .hollow-knight-page .overview-image img {
+    height: 340px;
+  }
+
+  .hollow-knight-page .characters-grid,
+  .hollow-knight-page .bosses-grid,
+  .hollow-knight-page .locations-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hollow-knight-page .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 170px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hollow-knight-page .game-hero {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: 92%;
+    padding: 40px 26px;
+  }
+
+  .hollow-knight-page .game-hero-content {
+    max-width: none;
+  }
+
+  .hollow-knight-page .game-hero h1 {
+    font-size: clamp(48px, 11vw, 65px);
+  }
+
+  .hollow-knight-page .hero-description {
+    font-size: 13px;
+  }
+
+  .hollow-knight-page .game-hero-visual {
+    width: min(100%, 500px);
+    margin: 0 auto;
+  }
+
+  .hollow-knight-page .game-overview {
+    grid-template-columns: 1fr;
+    width: 88%;
+    gap: 30px;
+    margin: 70px auto;
+  }
+
+  .hollow-knight-page .overview-image img {
+    height: 310px;
+  }
+}
+
+@media (max-width: 550px) {
+  .hollow-knight-page .header-container {
+    width: 90%;
+    min-height: 70px;
+    padding: 0 20px;
+  }
+
+  .hollow-knight-page .logo {
+    font-size: 22px;
+    gap: 4px;
+  }
+
+  .hollow-knight-page .logo > i {
+    font-size: 20px;
+  }
+
+  .hollow-knight-page .menu-toggle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hollow-knight-page .header-button {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    justify-content: center;
+    gap: 0;
+    font-size: 0;
+  }
+
+  .hollow-knight-page .header-button i {
+    font-size: 14px;
+  }
+
+  .hollow-knight-page .game-hero {
+    margin-top: 15px;
+    padding: 35px 21px;
+    gap: 27px;
+  }
+
+  .hollow-knight-page .game-hero h1 {
+    font-size: clamp(42px, 12vw, 57px);
+    letter-spacing: -2px;
+  }
+
+  .hollow-knight-page .section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .hollow-knight-page .hero-kicker {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .hollow-knight-page .hero-description {
+    margin: 20px 0;
+    font-size: 13px;
+  }
+
+  .hollow-knight-page .hero-actions,
+  .hollow-knight-page .game-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hollow-knight-page .hero-actions a,
+  .hollow-knight-page .game-links a {
+    width: 100%;
+  }
+
+  .hollow-knight-page .hero-meta {
+    gap: 8px;
+    margin-top: 25px;
+    font-size: 9px;
+  }
+
+  .hollow-knight-page .game-details {
+    gap: 9px;
+  }
+
+  .hollow-knight-page .game-details > div {
+    padding: 12px;
+  }
+
+  .hollow-knight-page .story-section {
+    width: 88%;
+    margin: 55px auto;
+    padding: 28px 22px;
+  }
+
+  .hollow-knight-page .story-section h2,
+  .hollow-knight-page .characters-section h2,
+  .hollow-knight-page .bosses-section h2,
+  .hollow-knight-page .locations-section h2,
+  .hollow-knight-page .gallery-section h2 {
+    font-size: 27px;
+  }
+
+  .hollow-knight-page .characters-section,
+  .hollow-knight-page .bosses-section,
+  .hollow-knight-page .locations-section,
+  .hollow-knight-page .gallery-section {
+    width: 88%;
+    margin: 65px auto;
+  }
+
+  .hollow-knight-page .characters-grid,
+  .hollow-knight-page .bosses-grid,
+  .hollow-knight-page .locations-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .hollow-knight-page .character-card img {
+    height: 250px;
+  }
+
+  .hollow-knight-page .boss-card img,
+  .hollow-knight-page .location-card img {
+    height: 220px;
+  }
+
+  .hollow-knight-page .gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 120px;
+    gap: 9px;
+  }
+
+  .hollow-knight-page .gallery-grid img:first-child {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+
+  .hollow-knight-page .footer-container {
+    width: 88%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 27px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .hollow-knight-page .header-container {
+    width: 92%;
+    gap: 8px;
+  }
+
+  .hollow-knight-page .logo {
+    font-size: 19px;
+  }
+
+  .hollow-knight-page .menu-toggle,
+  .hollow-knight-page .header-button {
+    width: 37px;
+    height: 37px;
+  }
+
+  .hollow-knight-page .game-hero {
+    padding: 30px 18px;
+  }
+
+  .hollow-knight-page .game-hero h1 {
+    font-size: 42px;
+  }
+
+  .hollow-knight-page .game-details {
+    grid-template-columns: 1fr;
+  }
+
+  .hollow-knight-page .story-section {
+    padding: 25px 19px;
+  }
+
+  .hollow-knight-page .gallery-grid {
+    grid-auto-rows: 105px;
     gap: 8px;
   }
 }
 
-.character-card,
-.boss-card,
-.location-card {
-  display: flex;
-  flex-direction: column;
-}
-
-.character-card .card-button,
-.boss-card .card-button,
-.location-card .card-button {
-  align-self: center;
-
-  margin: auto auto 22px;
-  padding: 12px 24px;
-
-  min-width: 155px;
-  box-sizing: border-box;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-
-  background: linear-gradient(135deg, #142d49, #1c4165);
-
-  color: #8ccaff;
-  border: 1px solid rgba(85, 184, 255, 0.45);
-  border-radius: 9px;
-
-  font-size: 14px;
-  font-weight: 600;
-  text-decoration: none;
-
-  transition:
-    background 0.3s ease,
-    color 0.3s ease,
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
-}
-
-.character-card .card-button:hover,
-.boss-card .card-button:hover,
-.location-card .card-button:hover {
-  background: linear-gradient(135deg, #2385c9, #55b8ff);
-
-  color: #ffffff;
-  border-color: #75c7ff;
-
-  transform: translateY(-4px);
-
-  box-shadow: 0 6px 20px rgba(85, 184, 255, 0.25);
-}
-
-.card-button i {
-  transition: transform 0.3s ease;
-}
-
-.card-button:hover i {
-  transform: translateX(5px);
-}
-
-.card-button:active {
-  transform: translateY(-1px) scale(0.97);
-}
-
-.card-button:focus-visible {
-  outline: 2px solid #75c7ff;
+.hollow-knight-page a:focus-visible {
+  outline: 2px solid var(--accent);
   outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hollow-knight-page *,
+  .hollow-knight-page *::before,
+  .hollow-knight-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }

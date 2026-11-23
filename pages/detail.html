@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <meta
+      name="description"
+      content="Explore the characters, bosses and locations of Undertale in the GameVerse archive."
+    />
+
     <title>Undertale Details | GameVerse</title>
 
     <link rel="stylesheet" href="../styles/style.css" />
     <link rel="stylesheet" href="../styles/components/detail.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -16,253 +22,490 @@
 
   <body class="detail-page">
     <header class="detail-header">
-      <a href="index.html" class="logo"
-        ><i class="fa-solid fa-gamepad" aria-hidden="true"></i> GAMEVERSE</a
-      >
-      <a href="undertale.html" class="back-button"
-        ><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back to
-        Undertale</a
-      >
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          GAME<span>VERSE</span>
+        </a>
+
+        <input type="checkbox" id="detail-menu-toggle" class="menu-toggle" />
+
+        <label
+          for="detail-menu-toggle"
+          class="menu-button"
+          aria-label="Toggle navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+
+        <nav class="detail-navigation">
+          <a href="#characters">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            Characters
+          </a>
+
+          <a href="#bosses">
+            <i class="fa-solid fa-dragon" aria-hidden="true"></i>
+            Bosses
+          </a>
+
+          <a href="#locations">
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            Locations
+          </a>
+        </nav>
+
+        <a href="undertale.html" class="back-button">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Back to Undertale</span>
+        </a>
+      </div>
     </header>
 
-    <main class="detail-container">
-      <p class="detail-intro">
-        Discover the characters, bosses and locations of Undertale.
-      </p>
+    <main>
+      <section class="detail-hero" id="top">
+        <div class="detail-hero-content">
+          <span class="hero-label">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            GAMEVERSE GAME DATABASE
+          </span>
 
-      <section class="detail-section" id="sans">
-        <img src="sans.jpg" alt="Sans" />
-        <div>
-          <h2>Sans</h2>
+          <h1>Undertale Archive</h1>
+
           <p>
-            Sans is a mysterious skeleton who lives in Snowdin with his brother
-            Papyrus. He is known for his jokes, relaxed personality and hidden
-            abilities.
+            Discover the characters, powerful bosses and mysterious locations
+            that make the Underground such an unforgettable world.
           </p>
+
+          <a href="#characters" class="hero-button">
+            Explore the Archive
+            <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="hero-side-icon" aria-hidden="true">
+          <i class="fa-solid fa-heart"></i>
         </div>
       </section>
 
-      <section class="detail-section" id="papyrus">
-        <img src="undertale-papyrus.jpg" alt="Papyrus" />
-        <div>
-          <h2>Papyrus</h2>
-          <p>
-            Papyrus is an energetic skeleton who dreams of joining the Royal
-            Guard. He enjoys puzzles and wants to become famous.
+      <div class="detail-container">
+        <section class="content-section" id="characters">
+          <div class="section-heading">
+            <div class="heading-title">
+              <span class="heading-icon">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <span class="section-label">MEET THE CAST</span>
+                <h2>Main Characters</h2>
+              </div>
+            </div>
+
+            <span class="section-count">01 / 03</span>
+          </div>
+
+          <p class="section-description">
+            Get to know the monsters and humans who shape the story of
+            Undertale.
           </p>
-        </div>
-      </section>
 
-      <section class="detail-section" id="frisk">
-        <img src="frisk.jpg" alt="Frisk" />
-        <div>
-          <h2>Frisk</h2>
-          <p>
-            Frisk is the human protagonist who falls into the Underground and
-            discovers the world of monsters.
+          <div class="details-grid">
+            <article class="detail-card" id="frisk">
+              <div class="card-image">
+                <img src="../images/undertale/frisk.jpg" alt="Frisk" />
+                <span class="card-category">
+                  <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                  Human
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Frisk</h3>
+                <p>
+                  Frisk is the human protagonist who falls into the Underground
+                  and discovers the world of monsters. Their choices influence
+                  the direction of the adventure.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-user" aria-hidden="true"></i>
+                    Main Character
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="sans">
+              <div class="card-image">
+                <img src="../images/undertale/sans.jpg" alt="Sans" />
+                <span class="card-category">
+                  <i class="fa-solid fa-bone" aria-hidden="true"></i>
+                  Skeleton
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Sans</h3>
+                <p>
+                  Sans is a mysterious skeleton who lives in Snowdin with his
+                  brother Papyrus. He is known for his jokes, relaxed
+                  personality and hidden abilities.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
+                    Snowdin
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="papyrus">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/undertale-papyrus.jpg"
+                  alt="Papyrus"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-bone" aria-hidden="true"></i>
+                  Skeleton
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Papyrus</h3>
+                <p>
+                  Papyrus is an energetic skeleton who dreams of joining the
+                  Royal Guard. He enjoys puzzles and wants to become famous.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    Royal Guard Dream
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="toriel">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/undertale-toriel.jpg"
+                  alt="Toriel"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-shield-heart" aria-hidden="true"></i>
+                  Guardian
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Toriel</h3>
+                <p>
+                  Toriel is the kind guardian of the Ruins who tries to protect
+                  Frisk and guide the human through the beginning of the
+                  journey.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-house" aria-hidden="true"></i>
+                    The Ruins
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="temmie">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/temmie.undertale.jpg"
+                  alt="Temmie"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-cat" aria-hidden="true"></i>
+                  Monster
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Temmie</h3>
+                <p>
+                  Temmie is a strange and cheerful monster who lives in Temmie
+                  Village. She has a unique way of speaking and loves spending
+                  time with other Temmies.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-face-smile" aria-hidden="true"></i>
+                    Temmie Village
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="undyne">
+              <div class="card-image">
+                <img src="../images/undertale/Undyne.battle.gif" alt="Undyne" />
+                <span class="card-category">
+                  <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                  Warrior
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Undyne</h3>
+                <p>
+                  Undyne is the captain of the Royal Guard. She is brave,
+                  determined and wants to capture the human.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-medal" aria-hidden="true"></i>
+                    Royal Guard
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="bosses">
+          <div class="section-heading">
+            <div class="heading-title">
+              <span class="heading-icon">
+                <i class="fa-solid fa-dragon" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <span class="section-label">POWERFUL ENCOUNTERS</span>
+                <h2>Notable Bosses</h2>
+              </div>
+            </div>
+
+            <span class="section-count">02 / 03</span>
+          </div>
+
+          <p class="section-description">
+            Discover some of the important characters and challenging encounters
+            found throughout the Underground.
           </p>
-        </div>
-      </section>
 
-      <section class="detail-section" id="toriel">
-        <img src="undertale-toriel.jpg" alt="Toriel" />
-        <div>
-          <h2>Toriel</h2>
-          <p>
-            Toriel is the kind guardian of the Ruins who tries to protect Frisk.
+          <div class="details-grid">
+            <article class="detail-card" id="asgore">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/asgore.friendly.png"
+                  alt="Asgore"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                  King
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Asgore</h3>
+                <p>
+                  Asgore is the king of the Underground and the ruler of the
+                  monster kingdom. He plays an important role in the story and
+                  the fate of the monsters.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-crown" aria-hidden="true"></i>
+                    King of Monsters
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="flowey">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/flowey.friendly.webp"
+                  alt="Flowey"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                  Mysterious
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Flowey</h3>
+                <p>
+                  Flowey is a mysterious flower who plays an important role in
+                  Undertale's story. His friendly appearance hides a complicated
+                  personality.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                    Mysterious Flower
+                  </span>
+                </div>
+              </div>
+            </article>
+
+            <article class="detail-card" id="mettaton">
+              <div class="card-image">
+                <img
+                  src="../images/undertale/mettaton.EX.png"
+                  alt="Mettaton EX"
+                />
+                <span class="card-category">
+                  <i class="fa-solid fa-tv" aria-hidden="true"></i>
+                  Robot
+                </span>
+              </div>
+
+              <div class="card-content">
+                <h3>Mettaton</h3>
+                <p>
+                  Mettaton is a charismatic robot who loves entertainment and
+                  performing. He is famous throughout the Underground for his
+                  dramatic shows.
+                </p>
+
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    Entertainer
+                  </span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="content-section" id="locations">
+          <div class="section-heading">
+            <div class="heading-title">
+              <span class="heading-icon">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+              </span>
+
+              <div>
+                <span class="section-label">EXPLORE THE WORLD</span>
+                <h2>Underground Locations</h2>
+              </div>
+            </div>
+
+            <span class="section-count">03 / 03</span>
+          </div>
+
+          <p class="section-description">
+            Travel through the different areas of the Underground and discover
+            the places where the story unfolds.
           </p>
-        </div>
-      </section>
 
-      <section class="detail-section" id="temmie">
-        <img src="temmie.undertale.jpg" alt="Temmie" />
-        <div>
-          <h2>Temmie</h2>
-          <p>
-            Temmie is a strange and cheerful monster who lives in Temmie
-            Village. She has a unique way of speaking and loves spending time
-            with other Temmies.
-          </p>
-        </div>
-      </section>
+          <div class="details-grid">
+            <article class="detail-card" id="ruins">
+              <div class="card-image">
+                <img src="../images/undertale/ruins.webp" alt="The Ruins" />
+                <span class="card-category">
+                  <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+                  Ancient Area
+                </span>
+              </div>
 
-      <section class="detail-section" id="undyne">
-        <img src="Undyne.battle.gif" alt="Undyne" />
-        <div>
-          <h2>Undyne</h2>
-          <p>
-            Undyne is the captain of the Royal Guard. She is brave, determined
-            and wants to capture the human.
-          </p>
-        </div>
-      </section>
+              <div class="card-content">
+                <h3>The Ruins</h3>
+                <p>
+                  The Ruins are the first major area Frisk explores in the
+                  Underground. This ancient place is where the adventure begins.
+                </p>
 
-      <section class="detail-section" id="asgore">
-        <img src="asgore.friendly.png" alt="Asgore" />
-        <div>
-          <h2>Asgore</h2>
-          <p>
-            Asgore is the king of the Underground and the ruler of the monster
-            kingdom.
-          </p>
-        </div>
-      </section>
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+                    First Area
+                  </span>
+                </div>
+              </div>
+            </article>
 
-      <section class="detail-section" id="flowey">
-        <img src="flowey.friendly.webp" alt="Flowey" />
-        <div>
-          <h2>Flowey</h2>
-          <p>
-            Flowey is a mysterious flower who plays an important role in
-            Undertale's story.
-          </p>
-        </div>
-      </section>
+            <article class="detail-card" id="snowdin">
+              <div class="card-image">
+                <img src="../images/undertale/Snowdin_Town.png" alt="Snowdin" />
+                <span class="card-category">
+                  <i class="fa-solid fa-snowflake" aria-hidden="true"></i>
+                  Snowy Region
+                </span>
+              </div>
 
-      <section class="detail-section" id="mettaton">
-        <img src="mettaton.EX.png" alt="Mettaton" />
-        <div>
-          <h2>Mettaton</h2>
-          <p>
-            Mettaton is a charismatic robot who loves entertainment and
-            performing.
-          </p>
-        </div>
-      </section>
+              <div class="card-content">
+                <h3>Snowdin</h3>
+                <p>
+                  Snowdin is a snowy region where Sans and Papyrus live. It is
+                  filled with forests, puzzles and memorable characters.
+                </p>
 
-      <section class="detail-section" id="ruins">
-        <img src="ruins.webp" alt="Ruins" />
-        <div>
-          <h2>Ruins</h2>
-          <p>
-            The Ruins are the first major area Frisk explores in the
-            Underground.
-          </p>
-        </div>
-      </section>
+                <div class="card-meta">
+                  <span>
+                    <i class="fa-solid fa-tree" aria-hidden="true"></i>
+                    Snowy Forest
+                  </span>
+                </div>
+              </div>
+            </article>
 
-      <section class="detail-section" id="snowdin">
-        <img src="Snowdin_Town.png" alt="Snowdin" />
-        <div>
-          <h2>Snowdin</h2>
-          <p>Snowdin is a snowy region where Sans and Papyrus live.</p>
-        </div>
-      </section>
+            <article class="detail-card" id="hotland">
+              <div class="card-image">
+                <img src="../images/undertale/hotland.jpg" alt="Hotland" />
+                <span class="card-category">
+                  <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                  Volcanic Region
+                </span>
+              </div>
 
-      <section class="detail-section" id="hotland">
-        <img src="hotland.jpg" alt="Hotland" />
-        <div>
-          <h2>Hotland</h2>
-          <p>
-            Hotland is a hot volcanic region filled with technology and
-            dangerous areas.
-          </p>
-        </div>
-      </section>
+              <div class="card-content">
+                <h3>Hotland</h3>
+                <p>
+                  Hotland is a hot volcanic region filled with technology,
+                  unusual areas and challenging encounters.
+                </p>
 
-      <section class="game-section" id="characters">
-        <h2>Characters</h2>
-
-        <div class="characters-grid">
-          <div class="game-card">
-            <img src="sans.jpg" alt="Sans" />
-            <h3>Sans</h3>
-            <p>A mysterious skeleton.</p>
-            <a href="detail.html#sans" class="details-button">View Details</a>
+                <div class="card-meta">
+                  <span>
+                    <i
+                      class="fa-solid fa-temperature-high"
+                      aria-hidden="true"
+                    ></i>
+                    High Temperature
+                  </span>
+                </div>
+              </div>
+            </article>
           </div>
-
-          <div class="game-card">
-            <img src="undertale-papyrus.jpg" alt="Papyrus" />
-            <h3>Papyrus</h3>
-            <p>An energetic skeleton.</p>
-            <a href="detail.html#papyrus" class="details-button"
-              >View Details</a
-            >
-          </div>
-
-          <div class="game-card">
-            <img src="temmie.undertale.jpg" alt="Temmie" />
-            <h3>Temmie</h3>
-            <p>A cheerful and unusual monster.</p>
-            <a href="detail.html#temmie" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="Undyne.battle.gif" alt="Undyne" />
-            <h3>Undyne</h3>
-            <p>The brave captain of the Royal Guard.</p>
-            <a href="detail.html#undyne" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="frisk.jpg" alt="Frisk" />
-            <h3>Frisk</h3>
-            <p>The human protagonist.</p>
-            <a href="detail.html#frisk" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="undertale-toriel.jpg" alt="Toriel" />
-            <h3>Toriel</h3>
-            <p>The guardian of the Ruins.</p>
-            <a href="detail.html#toriel" class="details-button">View Details</a>
-          </div>
-        </div>
-      </section>
-
-      <section class="game-section" id="bosses">
-        <h2>Bosses</h2>
-
-        <div class="bosses-grid">
-          <div class="game-card">
-            <img src="ASGORE.webp" alt="Asgore" />
-            <h3>Asgore</h3>
-            <a href="detail.html#asgore" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="Omega_Flowey.png" alt="Flowey" />
-            <h3>Flowey</h3>
-            <a href="detail.html#flowey" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="mettaton.EX.png" alt="Mettaton" />
-            <h3>Mettaton</h3>
-            <a href="detail.html#mettaton" class="details-button"
-              >View Details</a
-            >
-          </div>
-        </div>
-      </section>
-
-      <section class="game-section" id="locations">
-        <h2>Locations</h2>
-
-        <div class="locations-grid">
-          <div class="game-card">
-            <img src="ruins.webp" alt="Ruins" />
-            <h3>Ruins</h3>
-            <a href="detail.html#ruins" class="details-button">View Details</a>
-          </div>
-
-          <div class="game-card">
-            <img src="Snowdin_Town.png" alt="Snowdin" />
-            <h3>Snowdin</h3>
-            <a href="detail.html#snowdin" class="details-button"
-              >View Details</a
-            >
-          </div>
-
-          <div class="game-card">
-            <img src="hotland.jpg" alt="Hotland" />
-            <h3>Hotland</h3>
-            <a href="detail.html#hotland" class="details-button"
-              >View Details</a
-            >
-          </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
+
+    <footer class="detail-footer">
+      <div class="footer-container">
+        <a href="../index.html" class="logo">
+          <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+          GAME<span>VERSE</span>
+        </a>
+
+        <p>Explore worlds. Discover stories. <span>© 2026 GameVerse.</span></p>
+
+        <a href="#top" class="back-to-top" aria-label="Back to top">
+          <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+        </a>
+      </div>
+    </footer>
   </body>
 </html>

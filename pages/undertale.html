@@ -20,38 +20,53 @@
   </head>
 
   <body class="undertale-page">
-    <!-- HEADER -->
-
     <header class="header">
       <div class="header-container">
-        <a href="index.html" class="logo"> GAME<span>VERSE</span> </a>
+        <a href="index.html" class="logo">GAME<span>VERSE</span></a>
+
+        <input type="checkbox" id="undertale-menu-toggle" class="menu-toggle" />
+
+        <label
+          for="undertale-menu-toggle"
+          class="menu-button"
+          aria-label="Open navigation menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
         <nav class="navigation">
-          <a href="index.html"
-            ><i class="fa-solid fa-house" aria-hidden="true"></i> Home</a
-          >
-          <a href="#story"
-            ><i class="fa-solid fa-book-open" aria-hidden="true"></i> Story</a
-          >
-          <a href="#characters"
-            ><i class="fa-solid fa-users" aria-hidden="true"></i> Characters</a
-          >
-          <a href="#bosses"
-            ><i class="fa-solid fa-dragon" aria-hidden="true"></i> Bosses</a
-          >
-          <a href="#locations"
-            ><i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            Locations</a
-          >
-          <a href="#gallery"
-            ><i class="fa-regular fa-images" aria-hidden="true"></i> Gallery</a
-          >
+          <a href="index.html">
+            <i class="fa-solid fa-house" aria-hidden="true"></i>
+            Home
+          </a>
+          <a href="#story">
+            <i class="fa-solid fa-book-open" aria-hidden="true"></i>
+            Story
+          </a>
+          <a href="#characters">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            Characters
+          </a>
+          <a href="#bosses">
+            <i class="fa-solid fa-dragon" aria-hidden="true"></i>
+            Bosses
+          </a>
+          <a href="#locations">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            Locations
+          </a>
+          <a href="#gallery">
+            <i class="fa-regular fa-images" aria-hidden="true"></i>
+            Gallery
+          </a>
         </nav>
 
-        <a href="index.html" class="header-button"
-          ><i class="fa-solid fa-arrow-left" aria-hidden="true"></i> Back
-          Home</a
-        >
+        <a href="../index.html" class="header-button">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          Back Home
+        </a>
       </div>
     </header>
 
@@ -68,16 +83,23 @@
             every character has a story worth discovering.
           </p>
 
-          <a href="#story" class="primary-button"
-            >Discover the Story
-            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i
-          ></a>
+          <a href="#story" class="primary-button">
+            Discover the Story
+            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="hero-decoration">
+          <span>♥</span>
         </div>
       </section>
 
       <section class="game-overview">
         <div class="overview-image">
-          <img src="undertale-back1.jpg" alt="Undertale game cover" />
+          <img
+            src="../images/undertale/undertale-back1.jpg"
+            alt="Undertale game artwork"
+          />
         </div>
 
         <div class="overview-content">
@@ -94,23 +116,46 @@
 
           <div class="game-details">
             <div>
-              <span>Developer</span>
+              <span>
+                <i class="fa-solid fa-user-gear" aria-hidden="true"></i>
+                Developer
+              </span>
               <strong>Toby Fox</strong>
             </div>
 
             <div>
-              <span>Genre</span>
+              <span>
+                <i class="fa-solid fa-dice" aria-hidden="true"></i>
+                Genre
+              </span>
               <strong>RPG</strong>
             </div>
 
             <div>
-              <span>Release</span>
+              <span>
+                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                Release
+              </span>
               <strong>2015</strong>
             </div>
 
-            <div>
-              <span>Platform</span>
-              <strong>PC, Console</strong>
+            <div class="platform-detail">
+              <span>
+                <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                Platform
+              </span>
+
+              <strong class="platform-icons">
+                <span>
+                  <i class="fa-solid fa-desktop" aria-hidden="true"></i>
+                  PC
+                </span>
+
+                <span>
+                  <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+                  Console
+                </span>
+              </strong>
             </div>
           </div>
         </div>
@@ -118,7 +163,6 @@
 
       <section class="story-section" id="story">
         <p class="section-label">A WORLD BELOW</p>
-
         <h2>The Story</h2>
 
         <p>
@@ -131,16 +175,19 @@
       </section>
 
       <section class="game-section" id="characters">
-        <p class="section-label">MEET THE CHARACTERS</p>
-
-        <h2>Characters</h2>
+        <div class="section-heading">
+          <div>
+            <p class="section-label">MEET THE CHARACTERS</p>
+            <h2>Characters</h2>
+          </div>
+          <span class="section-number">01 / CHARACTERS</span>
+        </div>
 
         <div class="characters-grid">
           <article class="character-card">
             <div class="character-image">
-              <img src="frisk.jpg" alt="Frisk" />
+              <img src="../images/undertale/frisk.jpg" alt="Frisk" />
             </div>
-
             <div class="character-info">
               <h3>Frisk</h3>
               <p>
@@ -153,9 +200,8 @@
 
           <article class="character-card">
             <div class="character-image">
-              <img src="sans.jpg" alt="Sans" />
+              <img src="../images/undertale/sans.jpg" alt="Sans" />
             </div>
-
             <div class="character-info">
               <h3>Sans</h3>
               <p>
@@ -168,136 +214,140 @@
 
           <article class="character-card">
             <div class="character-image">
-              <img src="undertale-papyrus.jpg" alt="Papyrus" />
+              <img
+                src="../images/undertale/undertale-papyrus.jpg"
+                alt="Papyrus"
+              />
             </div>
-
             <div class="character-info">
               <h3>Papyrus</h3>
               <p>
                 An energetic skeleton who dreams of joining the Royal Guard.
               </p>
-              <a href="detail.html#papyrus" class="card-link"
-                >View Character →</a
-              >
+              <a href="detail.html#papyrus" class="card-link">
+                View Character →
+              </a>
             </div>
           </article>
 
           <article class="character-card">
             <div class="character-image">
-              <img src="undertale-toriel.jpg" alt="Toriel" />
+              <img
+                src="../images/undertale/undertale-toriel.jpg"
+                alt="Toriel"
+              />
             </div>
-
             <div class="character-info">
               <h3>Toriel</h3>
               <p>
                 A caring guardian who lives in the Ruins and helps the fallen
                 human.
               </p>
-              <a href="detail.html#toriel" class="card-link"
-                >View Character →</a
-              >
+              <a href="detail.html#toriel" class="card-link">
+                View Character →
+              </a>
             </div>
           </article>
 
           <article class="character-card">
             <div class="character-image">
-              <img src="temmie.undertale.jpg" alt="Temmie" />
+              <img
+                src="../images/undertale/temmie.undertale.jpg"
+                alt="Temmie"
+              />
             </div>
-
             <div class="character-info">
               <h3>Temmie</h3>
               <p>A cheerful and unusual creature from the Underground.</p>
-              <a href="detail.html#temmie" class="card-link"
-                >View Character →</a
-              >
+              <a href="detail.html#temmie" class="card-link">
+                View Character →
+              </a>
             </div>
           </article>
 
           <article class="character-card">
             <div class="character-image">
-              <img src="Undyne.battle.gif" alt="Undyne" />
+              <img src="../images/undertale/Undyne.battle.gif" alt="Undyne" />
             </div>
-
             <div class="character-info">
               <h3>Undyne</h3>
               <p>The determined captain of the Royal Guard.</p>
-              <a href="detail.html#undyne" class="card-link"
-                >View Character →</a
-              >
+              <a href="detail.html#undyne" class="card-link">
+                View Character →
+              </a>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="game-section" id="bosses">
-        <p class="section-label">IMPORTANT ENCOUNTERS</p>
-
-        <h2>Notable Bosses</h2>
+      <section class="game-section special-section" id="bosses">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">IMPORTANT ENCOUNTERS</p>
+            <h2>Notable Bosses</h2>
+          </div>
+          <span class="section-number">02 / BOSSES</span>
+        </div>
 
         <div class="bosses-grid">
           <article class="boss-card">
             <div class="boss-image">
-              <img src="ASGORE.webp" alt="Asgore" />
+              <img src="../images/undertale/ASGORE.webp" alt="Asgore" />
             </div>
-
             <div class="boss-info">
               <h3>Asgore</h3>
-
               <p>The king of the Underground and ruler of the monsters.</p>
-
-              <a href="detail.html#asgore" class="card-link"> View Boss → </a>
+              <a href="detail.html#asgore" class="card-link">View Boss →</a>
             </div>
           </article>
 
           <article class="boss-card">
             <div class="boss-image">
-              <img src="mettaton.EX.png" alt="Mettaton EX" />
+              <img
+                src="../images/undertale/mettaton.EX.png"
+                alt="Mettaton EX"
+              />
             </div>
-
             <div class="boss-info">
               <h3>Mettaton EX</h3>
-
               <p>A famous robotic entertainer with a dramatic personality.</p>
-
-              <a href="detail.html#mettaton" class="card-link"> View Boss → </a>
+              <a href="detail.html#mettaton" class="card-link">View Boss →</a>
             </div>
           </article>
 
           <article class="boss-card">
             <div class="boss-image">
-              <img src="Omega_Flowey.png" alt="Flowey" />
+              <img src="../images/undertale/Omega_Flowey.png" alt="Flowey" />
             </div>
-
             <div class="boss-info">
               <h3>Flowey</h3>
-
               <p>
                 A strange flower whose friendly appearance hides a mysterious
                 nature.
               </p>
-
-              <a href="detail.html#flowey" class="card-link"> View Boss → </a>
+              <a href="detail.html#flowey" class="card-link">View Boss →</a>
             </div>
           </article>
         </div>
       </section>
 
       <section class="game-section" id="locations">
-        <p class="section-label">EXPLORE THE UNDERGROUND</p>
-
-        <h2>Locations</h2>
+        <div class="section-heading">
+          <div>
+            <p class="section-label">EXPLORE THE UNDERGROUND</p>
+            <h2>Locations</h2>
+          </div>
+          <span class="section-number">03 / LOCATIONS</span>
+        </div>
 
         <div class="locations-grid">
           <article class="location-card">
             <div class="location-image">
-              <img src="ruins.webp" alt="The Ruins" />
+              <img src="../images/undertale/ruins.webp" alt="The Ruins" />
             </div>
-
             <div class="location-info">
               <h3>The Ruins</h3>
-
               <p>An ancient underground area where the adventure begins.</p>
-
               <a href="detail.html#ruins" class="card-link">
                 Explore Location →
               </a>
@@ -306,14 +356,11 @@
 
           <article class="location-card">
             <div class="location-image">
-              <img src="Snowdin_Town.png" alt="Snowdin" />
+              <img src="../images/undertale/Snowdin_Town.png" alt="Snowdin" />
             </div>
-
             <div class="location-info">
               <h3>Snowdin</h3>
-
               <p>A snowy region filled with monsters, forests and puzzles.</p>
-
               <a href="detail.html#snowdin" class="card-link">
                 Explore Location →
               </a>
@@ -322,14 +369,11 @@
 
           <article class="location-card">
             <div class="location-image">
-              <img src="hotland.jpg" alt="Hotland" />
+              <img src="../images/undertale/hotland.jpg" alt="Hotland" />
             </div>
-
             <div class="location-info">
               <h3>Hotland</h3>
-
               <p>A dangerous volcanic region with advanced technology.</p>
-
               <a href="detail.html#hotland" class="card-link">
                 Explore Location →
               </a>
@@ -338,31 +382,41 @@
         </div>
       </section>
 
-      <section class="game-section" id="gallery">
-        <p class="section-label">VISUAL JOURNEY</p>
-
-        <h2>Game Gallery</h2>
+      <section class="game-section gallery-section" id="gallery">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">VISUAL JOURNEY</p>
+            <h2>Game Gallery</h2>
+          </div>
+          <span class="section-number">04 / GALLERY</span>
+        </div>
 
         <div class="gallery-grid">
-          <img src="waterfall.png" alt="Undertale gallery image 1" />
-
-          <img src="tree.snowdin.jpg" alt="Undertale gallery image 2" />
-
-          <img src="corridor.jpg" alt="Undertale gallery image 3" />
-
-          <img src="Temmie_Village.png" alt="Undertale gallery image 4" />
-
-          <img src="outside.png" alt="Undertale gallery image 5" />
-
-          <img src="True_Lab.png" alt="Undertale gallery image 6" />
+          <img
+            src="../images/undertale/waterfall.png"
+            alt="Undertale Waterfall"
+          />
+          <img
+            src="../images/undertale/Snowdin_Town.png"
+            alt="Snowdin forest"
+          />
+          <img
+            src="../images/undertale/corridor.jpg"
+            alt="Undertale corridor"
+          />
+          <img
+            src="../images/undertale/Temmie_Village.png"
+            alt="Temmie Village"
+          />
+          <img src="/images/undertale/outside.png" alt="Underground scenery" />
+          <img src="../images/undertale/True_Lab.png" alt="True Lab" />
         </div>
       </section>
     </main>
 
     <footer class="footer">
       <div class="footer-container">
-        <a href="index.html" class="logo"> GAME<span>VERSE</span> </a>
-
+        <a href="../index.html" class="logo">GAME<span>VERSE</span></a>
         <p>© 2026 GameVerse. All rights reserved.</p>
       </div>
     </footer>
